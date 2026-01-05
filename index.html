@@ -26,7 +26,40 @@
       A student-made platform to share study materials, clear confusion about what to study from where,
       and connect with fellow SBB students — for studies & gossip 😄
     </p>
-  </section>
+    <p class="text-sm text-zinc-500 text-center mt-10">
+    Community posts are student-generated • Mods can be added later • Unofficial platform
+  </p>
+</section>
+
+<!-- Post Editor Modal -->
+<div id="editorModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+  <div class="bg-zinc-900 w-full max-w-2xl rounded-2xl p-6">
+    <h3 class="text-2xl font-bold mb-4">📝 Create a Post</h3>
+
+    <input type="text" placeholder="Post title" class="w-full mb-4 p-3 rounded-xl bg-zinc-800 text-white outline-none" />
+
+    <textarea placeholder="Write your post here..." rows="6" class="w-full mb-4 p-3 rounded-xl bg-zinc-800 text-white outline-none"></textarea>
+
+    <input type="file" accept="image/*" class="mb-4 text-zinc-400" />
+
+    <div class="flex justify-end gap-3">
+      <button onclick="closeEditor()" class="px-4 py-2 rounded-xl bg-zinc-700">Cancel</button>
+      <button onclick="alert('This is a static demo. Posts are not saved yet.');" class="px-4 py-2 rounded-xl bg-purple-600">Post</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function openEditor(){
+  document.getElementById('editorModal').classList.remove('hidden');
+  document.getElementById('editorModal').classList.add('flex');
+}
+function closeEditor(){
+  document.getElementById('editorModal').classList.add('hidden');
+  document.getElementById('editorModal').classList.remove('flex');
+}
+</script>
+
 
   <!-- Materials -->
   <section id="materials" class="px-6 py-16 max-w-5xl mx-auto">
@@ -81,7 +114,7 @@
   <div class="bg-zinc-900 rounded-2xl p-6 mb-8">
     <h4 class="text-xl font-semibold mb-2">📝 Create a Post</h4>
     <p class="text-zinc-400 text-sm mb-4">Share your thoughts anonymously using the community post form.</p>
-    <a href="#" class="inline-block bg-purple-600 hover:bg-purple-500 transition px-6 py-3 rounded-xl font-semibold">Create Post</a>
+    <button onclick="openEditor()" class="inline-block bg-purple-600 hover:bg-purple-500 transition px-6 py-3 rounded-xl font-semibold">Create Post</button>
   </div>
 
   <div class="space-y-6">
